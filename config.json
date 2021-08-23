@@ -1,0 +1,51 @@
+{
+  "name": "Pipe Server Variable to Field",
+  "namespace": "PSVTF\\ExternalModule",
+  "description": "Autopopulate fields with PHP $_SERVER variables",
+  "documentation": "README.md",
+  "authors": [
+    {
+      "name": "University of Florida CTS-IT",
+      "email": "CTSIT-REDCAP-MODULE-SUPPO@LISTS.UFL.EDU",
+      "institution": "University of Florida - CTSI"
+    }
+  ],
+  "framework-version": 6,
+  "permissions": [
+    "redcap_every_page_top"
+  ],
+  "enable-every-page-hooks-on-system-pages": false,
+  "links":{},
+  "no-auth-pages": [],
+  "system-settings": [],
+  "project-settings": [
+    {
+      "key": "enabled_field",
+      "name": "Enabled Field",
+      "type": "sub_settings",
+      "repeatable": true,
+      "sub_settings": [
+        {
+          "key": "pipe_event_id",
+          "name": "Event",
+          "type": "event-list"
+        },
+        {
+          "key": "pipe_field_key",
+          "name": "Field",
+          "type": "field-list"
+        },
+        {
+          "key": "server_var",
+          "name": "$_SERVER[]",
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "crons": [],
+  "compatibility": {
+    "php-version-min": "7.0.0",
+    "redcap-version-min": "10.4.1"
+  }
+}
