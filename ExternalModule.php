@@ -6,7 +6,7 @@ class ExternalModule extends \ExternalModules\AbstractExternalModule {
 
   public function redcap_every_page_top($project_id = null) {
 
-      if ( /*PAGE == 'DataEntry/index.php' || */ PAGE == 'surveys/index.php') {
+      if ( PAGE == 'DataEntry/index.php' || PAGE == 'surveys/index.php') {
       $targets = [];
 
       $settings = $this->framework->getProjectSettings();

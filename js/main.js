@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    console.log(PSVTF);
     pasteValuesPSVTF(PSVTF.targets);
 });
 
@@ -7,6 +6,8 @@ $(document).ready(function() {
 function pasteValuesPSVTF(values) {
     for (let [key, value] of Object.entries(values)) {
         let $target_field = $(`input[name='${key}']`);
+        // Don't overwrite filled fields
+        if ($target_field.val() != "") { return; }
         if ($target_field.attr('class') == 'hiddenradio') {
             // collect all radio fields in all layouts
             let $inputs = $target_field.siblings('[class*="choice"]');
