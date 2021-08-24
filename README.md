@@ -9,6 +9,9 @@ Autopopulate fields with PHP `$_SERVER` variables
 
 ## Introduction
 
-## Use
+## Configuration
 
-TODO
+For each "Enabled Field" you may set the following:
+
+- **Field**: The field_name you wish to populate with the value set in "\$_SERVER[]".
+- **\$_SERVER[]**: The value `$foo` which will be passed in to `$_SERVER[$foo]` to populate the field you set in "Field". Dropdown choices will be populated for you.

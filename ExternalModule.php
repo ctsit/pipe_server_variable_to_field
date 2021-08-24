@@ -27,6 +27,22 @@ class ExternalModule extends \ExternalModules\AbstractExternalModule {
     }
   }
 
+
+  public function redcap_module_configuration_settings($project_id = null, $settings = null) {
+    // create choices of $_SERVER variables array in expected format
+    $i = 0;
+    foreach (array_keys($_SERVER) as $key) {
+      $server_key_choices[$i++] = ["value" => $key, "name" => $key];
+    }
+
+    // override server_var choices with those we created
+    $settings[0]["sub_settings"][2]["choices"] = $server_key_choices;
+    // TODO: hack in dynamic option creation
+    // See: https://select2.org/tagging
+    return $settings;
+  }
+
+
   protected function includeJs($file) {
     echo '<script src="' . $this->framework->getUrl($file) . '"></script>';
   }

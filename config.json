@@ -12,7 +12,8 @@
   ],
   "framework-version": 6,
   "permissions": [
-    "redcap_every_page_top"
+    "redcap_every_page_top",
+    "redcap_module_configuration_settings"
   ],
   "enable-every-page-hooks-on-system-pages": false,
   "links":{},
@@ -38,7 +39,14 @@
         {
           "key": "server_var",
           "name": "$_SERVER[]",
-          "type": "text"
+          "type": "dropdown",
+          "autocomplete": true,
+          "choices": [
+            {
+              "value": "error",
+              "name": "If you see this, please contact your admin"
+            }
+          ]
         }
       ]
     }
